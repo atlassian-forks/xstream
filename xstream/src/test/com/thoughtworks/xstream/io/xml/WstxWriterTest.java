@@ -5,7 +5,7 @@
  * The software in this package is published under the terms of the BSD
  * style license a copy of which has been included with this distribution in
  * the LICENSE.txt file.
- * 
+ *
  * Created on 29. September 2011 by Joerg Schaible, renamed from WoodstoxStaxWriterTest
  */
 package com.thoughtworks.xstream.io.xml;
@@ -25,6 +25,7 @@ public final class WstxWriterTest extends AbstractStaxWriterTest {
             expected = replaceAll(expected, "&#x0D;", "&#xd;");
         }
         expected = replaceAll(expected, "&gt;", ">"); // Woodstox behavior !!
+        expected = expected.replaceAll("<(\\w+)([^>]*)/>", "<$1$2 />");
         expected = getXMLHeader() + expected;
         assertEquals(expected, buffer.toString());
     }
