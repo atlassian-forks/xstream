@@ -1114,10 +1114,10 @@
   </distributionManagement>
 
   <scm>
-    <url>http://github.com/x-stream/xstream</url>
-    <developerConnection>scm:git:ssh://git@github.com/x-stream/xstream.git</developerConnection>
-    <connection>scm:git:ssh://git@github.com/x-stream/xstream.git</connection>
-    <tag>v-1.4.x</tag>
+    <url>https://github.com/atlassian-forks/xstream</url>
+    <developerConnection>scm:git:ssh://git@github.com/atlassian-forks/xstream.git</developerConnection>
+    <connection>scm:git:ssh://git@github.com/atlassian-forks/xstream.git</connection>
+    <tag>v-1.4.x-atlassian-01-x</tag>
   </scm>
 
   <properties>
