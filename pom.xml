@@ -1096,14 +1096,18 @@
   </build>
 
   <distributionManagement>
+<!--    <repository>-->
+<!--      <id>ossrh-staging</id>-->
+<!--      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>-->
+<!--    </repository>-->
+<!--    <snapshotRepository>-->
+<!--      <id>ossrh-snapshots</id>-->
+<!--      <url>https://oss.sonatype.org/content/repositories/snapshots</url>-->
+<!--    </snapshotRepository>-->
     <repository>
-      <id>ossrh-staging</id>
-      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+      <id>atlassian-3rdparty</id>
+      <url>https://packages.atlassian.com/maven/3rdparty</url>
     </repository>
-    <snapshotRepository>
-      <id>ossrh-snapshots</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-    </snapshotRepository>
     <!--site>
       <id>github</id>
       <url>scm:git:ssh://git@github.com/x-stream/x-stream.github.io.git</url>
