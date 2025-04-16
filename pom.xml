@@ -3,18 +3,18 @@
      Copyright (C) 2006 Joe Walnes.
      Copyright (C) 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2024 XStream committers.
      All rights reserved.
-     
+
      The software in this package is published under the terms of the BSD
      style license a copy of which has been included with this distribution in
      the LICENSE.txt file.
-     
+
      Created on 29. July 2006 by Mauro Talevi
      -->
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.thoughtworks.xstream</groupId>
   <artifactId>xstream-parent</artifactId>
   <packaging>pom</packaging>
-  <version>1.4.22-SNAPSHOT</version>
+  <version>1.4.22-atlassian-02-SNAPSHOT</version>
   <name>XStream Parent</name>
   <url>http://x-stream.github.io</url>
   <description>
@@ -98,9 +98,6 @@
     </profile>
     <profile>
       <id>jdk8</id>
-      <activation>
-        <jdk>1.8</jdk>
-      </activation>
       <properties>
         <version.java.source>1.4</version.java.source>
         <version.java.target>1.4</version.java.target>
@@ -301,29 +298,29 @@
         <bundle.import.package>*</bundle.import.package>
       </properties>
     </profile>
-    <profile>
-      <id>xstream-release</id>
-      <properties>
-        <version.java.enforced>[1.8,1.9)</version.java.enforced>
-      </properties>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-gpg-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>sign-artifacts</id>
-                <phase>verify</phase>
-                <goals>
-                  <goal>sign</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
+<!--    <profile>-->
+<!--      <id>xstream-release</id>-->
+<!--      <properties>-->
+<!--        <version.java.enforced>[1.8,1.9)</version.java.enforced>-->
+<!--      </properties>-->
+<!--      <build>-->
+<!--        <plugins>-->
+<!--          <plugin>-->
+<!--            <groupId>org.apache.maven.plugins</groupId>-->
+<!--            <artifactId>maven-gpg-plugin</artifactId>-->
+<!--            <executions>-->
+<!--              <execution>-->
+<!--                <id>sign-artifacts</id>-->
+<!--                <phase>verify</phase>-->
+<!--                <goals>-->
+<!--                  <goal>sign</goal>-->
+<!--                </goals>-->
+<!--              </execution>-->
+<!--            </executions>-->
+<!--          </plugin>-->
+<!--        </plugins>-->
+<!--      </build>-->
+<!--    </profile>-->
     <profile>
       <id>coveralls</id>
       <activation>
@@ -416,12 +413,12 @@
       <dependency>
         <groupId>com.thoughtworks.xstream</groupId>
         <artifactId>xstream</artifactId>
-        <version>1.4.22-SNAPSHOT</version>
+        <version>1.4.22-atlassian-02-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>com.thoughtworks.xstream</groupId>
         <artifactId>xstream</artifactId>
-        <version>1.4.22-SNAPSHOT</version>
+        <version>1.4.22-atlassian-02-SNAPSHOT</version>
         <classifier>tests</classifier>
         <type>test-jar</type>
         <scope>test</scope>
@@ -429,47 +426,47 @@
       <dependency>
         <groupId>com.thoughtworks.xstream</groupId>
         <artifactId>xstream</artifactId>
-        <version>1.4.22-SNAPSHOT</version>
+        <version>1.4.22-atlassian-02-SNAPSHOT</version>
         <classifier>javadoc</classifier>
         <scope>provided</scope>
       </dependency>
       <dependency>
         <groupId>com.thoughtworks.xstream</groupId>
         <artifactId>xstream-hibernate</artifactId>
-        <version>1.4.22-SNAPSHOT</version>
+        <version>1.4.22-atlassian-02-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>com.thoughtworks.xstream</groupId>
         <artifactId>xstream-hibernate</artifactId>
-        <version>1.4.22-SNAPSHOT</version>
+        <version>1.4.22-atlassian-02-SNAPSHOT</version>
         <classifier>javadoc</classifier>
         <scope>provided</scope>
       </dependency>
       <dependency>
         <groupId>com.thoughtworks.xstream</groupId>
         <artifactId>xstream-jmh</artifactId>
-        <version>1.4.22-SNAPSHOT</version>
+        <version>1.4.22-atlassian-02-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>com.thoughtworks.xstream</groupId>
         <artifactId>xstream-jmh</artifactId>
-        <version>1.4.22-SNAPSHOT</version>
+        <version>1.4.22-atlassian-02-SNAPSHOT</version>
         <classifier>javadoc</classifier>
         <scope>provided</scope>
       </dependency>
       <dependency>
         <groupId>com.thoughtworks.xstream</groupId>
         <artifactId>xstream-benchmark</artifactId>
-        <version>1.4.22-SNAPSHOT</version>
+        <version>1.4.22-atlassian-02-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>com.thoughtworks.xstream</groupId>
         <artifactId>xstream-benchmark</artifactId>
-        <version>1.4.22-SNAPSHOT</version>
+        <version>1.4.22-atlassian-02-SNAPSHOT</version>
         <classifier>javadoc</classifier>
         <scope>provided</scope>
       </dependency>
-            
+
       <dependency>
         <groupId>commons-io</groupId>
         <artifactId>commons-io</artifactId>
@@ -1099,14 +1096,18 @@
   </build>
 
   <distributionManagement>
+<!--    <repository>-->
+<!--      <id>ossrh-staging</id>-->
+<!--      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>-->
+<!--    </repository>-->
+<!--    <snapshotRepository>-->
+<!--      <id>ossrh-snapshots</id>-->
+<!--      <url>https://oss.sonatype.org/content/repositories/snapshots</url>-->
+<!--    </snapshotRepository>-->
     <repository>
-      <id>ossrh-staging</id>
-      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+      <id>atlassian-3rdparty</id>
+      <url>https://packages.atlassian.com/maven/3rdparty</url>
     </repository>
-    <snapshotRepository>
-      <id>ossrh-snapshots</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-    </snapshotRepository>
     <!--site>
       <id>github</id>
       <url>scm:git:ssh://git@github.com/x-stream/x-stream.github.io.git</url>
@@ -1114,12 +1115,12 @@
   </distributionManagement>
 
   <scm>
-    <url>http://github.com/x-stream/xstream</url>
-    <developerConnection>scm:git:ssh://git@github.com/x-stream/xstream.git</developerConnection>
-    <connection>scm:git:ssh://git@github.com/x-stream/xstream.git</connection>
+    <url>http://github.com/atlassian-forks/xstream</url>
+    <developerConnection>scm:git:ssh://git@github.com/atlassian-forks/xstream.git</developerConnection>
+    <connection>scm:git:ssh://git@github.com/atlassian-forks/xstream.git</connection>
     <tag>v-1.4.x</tag>
   </scm>
-  
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
